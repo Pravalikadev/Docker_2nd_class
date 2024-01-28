@@ -1,1 +1,15 @@
-
+yum update
+vi dockerfile
+FROM amazonlinux
+RUN yum update -y
+RUN yum install git -y
+RUN yum install maven -y
+RUN mkdir gitdir && cd gitdir
+esc shit:wq
+docker build -t git:latest .
+sudo docker images
+docker run -it git:latest
+docker ps -a
+docker run -it -d git:latest
+docker ps
+docker exec -it 1fbe521c1157 bash
