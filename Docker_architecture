@@ -1,4 +1,9 @@
 yum update
+sudo su
+yum install docker -y
+systemctl enable docker
+systemctl start docker
+yum update
 vi dockerfile
 FROM amazonlinux
 RUN yum update -y
@@ -6,7 +11,7 @@ RUN yum install git -y
 RUN yum install maven -y
 RUN mkdir gitdir && cd gitdir
 esc shit:wq
-docker build -t git:latest .
+docker build -t git:latest . ...................> (git:latest) is the image name, u can also use container id if u want.
 sudo docker images
 docker run -it git:latest
 docker ps -a
